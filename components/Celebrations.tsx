@@ -48,7 +48,11 @@ export function Celebrations() {
       <div {...reveal("fade", 200)} className="mt-16 flex flex-col items-center text-center">
         <p className="eyebrow inline-flex items-center gap-3 text-maroon-700">
           <span aria-hidden="true" className="hidden h-px w-8 bg-current opacity-60 sm:block" />
-          All celebrations at {venue.name}
+          All celebrations at 
+    <span className="text-base font-bold text-maroon-800 sm:text-lg md:text-xl">
+      {venue.name}
+    </span>
+   
           <span aria-hidden="true" className="hidden h-px w-8 bg-current opacity-60 sm:block" />
         </p>
         <p className="mt-3 font-caps text-[0.8rem] tracking-[0.3em] text-brown-500">{venue.locality}</p>

@@ -166,7 +166,7 @@ export const wedding = {
         name: "The Punjanis",
         members: [
           // Placeholder — replace with the grandparents' names.
-          { role: "Grandparents", names: "Smt. Kamla & Sh. Mohan Lal Punjani" },
+          { role: "Grandparents", names:"Late Smt. Raj Dyani & Late Sh. Jay Dyal Punjani "},
           { role: "Parents", names: "Mrs. Suman & Mr. Naresh Punjani" },
           { role: "Brother", names: "Puneet Punjani" },
         ],

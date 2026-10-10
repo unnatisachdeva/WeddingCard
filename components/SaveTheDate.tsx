@@ -123,13 +123,13 @@ export function SaveTheDate() {
       {/* the day itself */}
       <div className="mt-14 text-center">
         <p {...reveal("fade", 100)} className="eyebrow text-ivory/80">
-          Our special day
+          The Wedding Celebration
         </p>
         <p {...reveal("up", 200)} className="text-gold-foil mt-5 font-caps text-[clamp(1.9rem,8vw,2.8rem)] leading-tight tracking-[0.12em]">
           {date.display.toUpperCase()}
         </p>
         <p {...reveal("up", 300)} className="mt-3 font-display text-2xl text-ivory/85 italic">
-          {date.weekday} — the day our forever begins
+          {date.weekday} — the beginning of a beautiful new chapter 
         </p>
         <div {...reveal("scale", 400)}>
           <Divider className="mx-auto mt-8 w-40 text-gold-400" />

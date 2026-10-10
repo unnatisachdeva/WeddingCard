@@ -75,7 +75,7 @@ export function Hero() {
             <p className="mt-5 font-display text-[1.45rem] tracking-[0.18em] text-brown-800">
               {date.numeric.replaceAll("·", "•")}
             </p>
-            <p className="mt-1.5 font-display text-lg text-brown-500 italic">We&rsquo;re getting married</p>
+            {/* <p className="mt-1.5 font-display text-lg text-brown-500 italic">We&rsquo;re getting married</p> */}
             <p className="eyebrow mt-4 text-[0.6rem] text-gold-700">
               {date.weekday} · {venue.name}
             </p>

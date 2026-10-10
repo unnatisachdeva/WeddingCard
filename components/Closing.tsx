@@ -26,18 +26,18 @@ export function Closing() {
       </div>
 
       <p {...reveal("up", 200)} className="mx-auto mt-12 max-w-md font-display text-2xl leading-snug font-light text-brown-700 italic sm:text-3xl">
-        Your love and blessings are the most beautiful part of our story.
-        <span className="mt-2 block">We can&rsquo;t wait to celebrate with you.</span>
+        Your presence and blessings will make this joyous occasion even more special. We look forward to celebrating these beautiful moments with you.
+        {/* <span className="mt-2 block">We can&rsquo;t wait to celebrate with you.</span> */}
       </p>
 
       <p {...reveal("fade", 300)} className="eyebrow mt-14 text-gold-700">
-        With love
+        With love & warm regards,
       </p>
       <p
         {...reveal("blur", 400)}
         className="mt-4 font-script text-[clamp(3.6rem,15vw,6.5rem)] leading-[1.1] text-maroon-800"
       >
-        {couple.partnerOne} <span className="text-gold-700">&amp;</span> {couple.partnerTwo}
+        Sachdeva Family
       </p>
 
       <div {...reveal("up", 500)}>

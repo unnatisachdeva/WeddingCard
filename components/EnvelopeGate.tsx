@@ -40,10 +40,10 @@ function CoverArt({ hidden = false }: { hidden?: boolean }) {
 
       <div className="gate-hint absolute inset-x-0 top-[24%] px-6 text-center text-[#f1e6dc]">
         <p className="font-display text-[clamp(1.3rem,6vw,1.75rem)] tracking-[0.05em] [font-variant-caps:small-caps]">
-          A Love Letter From
+          A Wedding Invitation From
         </p>
         <p className="mt-1 font-script text-[clamp(2.6rem,12.5vw,4rem)] leading-[1.15] text-[#f6ede4] [text-shadow:0_2px_10px_rgba(20,2,6,0.35)]">
-          {partnerOne} &amp; {partnerTwo}
+          Sachdeva Family
         </p>
       </div>
     </div>

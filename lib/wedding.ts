@@ -149,10 +149,9 @@ export const wedding = {
       },
     },
   ] satisfies readonly WeddingEvent[],
-
   families: {
     eyebrow: "With love & blessings from",
-    title: "Our Families",
+    title: "Our Family",
     list: [
       {
         name: "The Sachdevas",
@@ -162,15 +161,15 @@ export const wedding = {
           { role: "Sister", names: "Unnati Sachdeva" },
         ],
       },
-      {
-        name: "The Punjanis",
-        members: [
-          // Placeholder — replace with the grandparents' names.
-          { role: "Grandparents", names:"Late Smt. Raj Rani & Late Sh. Jay Dyal Punjani "},
-          { role: "Parents", names: "Mrs. Suman & Mr. Naresh Punjani" },
-          { role: "Brother", names: "Puneet Punjani" },
-        ],
-      },
+      // {
+      //   name: "The Punjanis",
+      //   members: [
+      //     // Placeholder — replace with the grandparents' names.
+      //     { role: "Grandparents", names:"Late Smt. Raj Rani & Late Sh. Jay Dyal Punjani "},
+      //     { role: "Parents", names: "Mrs. Suman & Mr. Naresh Punjani" },
+      //     { role: "Brother", names: "Puneet Punjani" },
+      //   ],
+      // },
     ],
     note: "Awaiting the presence of our beloved family and friends",
   },

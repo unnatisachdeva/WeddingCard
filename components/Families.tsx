@@ -33,7 +33,7 @@ export function Families() {
         </h2>
       </header>
 
-      <div className="mx-auto mt-12 grid max-w-5xl gap-8 sm:mt-14 md:grid-cols-2 md:gap-10">
+      <div className="mx-auto mt-12 grid max-w-[38rem] justify-items-center gap-8 sm:mt-14 md:gap-10">
         {list.map((family, i) => (
           <article
             key={family.name}

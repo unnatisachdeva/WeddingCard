@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useRef, useState } from "react";
@@ -39,7 +38,7 @@ export default function MusicPlayer() {
         onClick={toggleMusic}
         aria-label={isPlaying ? "Pause wedding music" : "Play wedding music"}
         title={isPlaying ? "Pause music" : "Play music"}
-        className="group rounded-full outline-none
+        className="group flex flex-col items-center gap-1.5 outline-none
           focus-visible:ring-2 focus-visible:ring-[#C5A46D]
           focus-visible:ring-offset-4"
       >
@@ -74,8 +73,10 @@ export default function MusicPlayer() {
                   "radial-gradient(circle at 35% 30%, #984B55, #692531 75%)",
               }}
             >
-              <div className="h-[7px] w-[7px] rounded-full
-                border border-[#E5CC91] bg-[#F7EEDD]" />
+              <div
+                className="h-[7px] w-[7px] rounded-full
+                  border border-[#E5CC91] bg-[#F7EEDD]"
+              />
             </div>
           </div>
 
@@ -86,6 +87,30 @@ export default function MusicPlayer() {
               rounded-full bg-white/80 blur-[1px]"
           />
         </div>
+
+        {/* Sub-button hint label */}
+        <span
+          className="inline-flex items-center gap-1 rounded-full
+            border border-[#D7B66D] bg-[#FFF8E7]/95 px-2.5 py-0.5
+            text-[0.55rem] font-semibold uppercase tracking-[0.15em]
+            text-[#692531] shadow-sm backdrop-blur-sm
+            transition-colors duration-300 group-hover:bg-[#692531]
+            group-hover:text-[#FFF8E7]"
+        >
+          {isPlaying ? (
+            <>
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-current" />
+              Pause
+            </>
+          ) : (
+            <>
+              <svg viewBox="0 0 24 24" className="h-2 w-2 fill-current" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              Play
+            </>
+          )}
+        </span>
       </button>
     </div>
   );

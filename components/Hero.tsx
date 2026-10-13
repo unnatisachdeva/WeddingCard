@@ -61,6 +61,21 @@ export function Hero() {
               {date.weekday} · {venue.name}
             </p>
           </div>
+          <div
+  className="eyebrow mt-24 inline-flex flex-col items-center gap-3 text-[0.6rem] text-brown-500 pointer-events-none select-none"
+  aria-hidden="true"
+>
+  <span>Scroll down</span>
+  <svg
+    viewBox="0 0 24 24"
+    className="h-4 w-4 animate-bounce"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.2}
+  >
+    <path d="M6 10l6 6 6-6" />
+  </svg>
+</div>
         </div>
       </div>
     </section>

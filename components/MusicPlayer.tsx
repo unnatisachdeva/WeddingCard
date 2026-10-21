@@ -1,22 +1,66 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const UNLOCK_EVENTS = ["pointerdown", "touchend", "keydown", "click"] as const;
 
 export default function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const userPausedRef = useRef(false);
   const [isPlaying, setIsPlaying] = useState(false);
+
+  // Start music by default when the site opens
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.volume = 0.6;
+
+    const removeUnlockListeners = () => {
+      UNLOCK_EVENTS.forEach((evt) =>
+        document.removeEventListener(evt, unlock, true)
+      );
+    };
+
+    // Browsers may block autoplay until the visitor interacts with the page.
+    // The first tap anywhere (e.g. "Open invitation") starts the music.
+    function unlock(e: Event) {
+      if (!audio || userPausedRef.current) return removeUnlockListeners();
+
+      // A first tap on the CD itself is handled by toggleMusic instead
+      if (buttonRef.current?.contains(e.target as Node)) return;
+
+      audio
+        .play()
+        .then(removeUnlockListeners)
+        .catch(() => {
+          // Still blocked; wait for the next interaction
+        });
+    }
+
+    audio.play().catch(() => {
+      UNLOCK_EVENTS.forEach((evt) =>
+        document.addEventListener(evt, unlock, true)
+      );
+    });
+
+    return removeUnlockListeners;
+  }, []);
 
   async function toggleMusic() {
     const audio = audioRef.current;
     if (!audio) return;
 
     if (audio.paused) {
+      userPausedRef.current = false;
       try {
         await audio.play();
       } catch (error) {
         console.error("Unable to play wedding music:", error);
       }
     } else {
+      userPausedRef.current = true;
       audio.pause();
     }
   }
@@ -27,13 +71,15 @@ export default function MusicPlayer() {
         ref={audioRef}
         src="/wed-invite-song.mp3"
         loop
-        preload="none"
+        autoPlay
+        preload="auto"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onEnded={() => setIsPlaying(false)}
       />
 
       <button
+        ref={buttonRef}
         type="button"
         onClick={toggleMusic}
         aria-label={isPlaying ? "Pause wedding music" : "Play wedding music"}
@@ -53,6 +99,7 @@ export default function MusicPlayer() {
           style={{
             background:
               "conic-gradient(from 0deg, #FFF8E7, #B99B60, #F9EFD7, #AAA18F, #FFFDF5, #C5A46D, #F3E5C6, #FFF8E7)",
+            animationDuration: isPlaying ? "4s" : undefined,
           }}
         >
           {/* CD grooves */}

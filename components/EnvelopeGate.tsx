@@ -217,6 +217,10 @@ function SealArt() {
           ].map(([x, y]) => (
             <circle key={`${x}-${y}`} cx={x} cy={y} r="3" />
           ))}
+        </g>
+
+        {/* monogram (drawn separately so it can be maroon) */}
+        <g id="seal-monogram">
           <text x="100" y="192" textAnchor="middle" fontSize="27" letterSpacing="2" style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}>
             {monogram[0]} &amp; {monogram[1]}
           </text>
@@ -234,6 +238,10 @@ function SealArt() {
       <use href="#seal-solids" transform="translate(1.1 1.4)" fill="rgba(118,96,64,0.4)" />
       <use href="#seal-solids" transform="translate(-0.9 -0.9)" fill="rgba(255,255,255,0.95)" />
       <use href="#seal-solids" fill="#ece2cf" />
+
+      {/* maroon initials with a soft pressed-in look */}
+      <use href="#seal-monogram" transform="translate(-0.6 -0.6)" fill="rgba(255,255,255,0.85)" />
+      <use href="#seal-monogram" fill="#5c0a1c" />
     </svg>
   );
 }

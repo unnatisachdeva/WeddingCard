@@ -1,5 +1,6 @@
 import { Celebrations } from "@/components/Celebrations";
 import { Closing } from "@/components/Closing";
+import { ContactFooter } from "@/components/ContactFooter";
 import { EnvelopeGate } from "@/components/EnvelopeGate";
 import { Families } from "@/components/Families";
 import { Hero } from "@/components/Hero";
@@ -21,6 +22,7 @@ export default function Home() {
         <Families />
       </main>
       <Closing />
+      <ContactFooter />
       <RevealObserver />
     </>
   );

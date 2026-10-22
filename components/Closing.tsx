@@ -9,7 +9,7 @@ export function Closing() {
   const { couple, date, venue } = wedding;
 
   return (
-    <footer
+    <section
       aria-label="Closing note"
       className="relative isolate overflow-hidden bg-[linear-gradient(180deg,#f1e2c0_0%,#e6cf9d_55%,#d9bc84_100%)] px-6 pt-24 pb-12 text-center text-maroon-800 sm:pt-32"
     >
@@ -56,6 +56,7 @@ export function Closing() {
         </svg>
         Back to top
       </a>
-    </footer>
+
+    </section>
   );
 }
